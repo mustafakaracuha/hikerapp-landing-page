@@ -25,16 +25,15 @@ const NotFound = () => {
               <span className="text-2xl font-bold">404</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold tracking-tight bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-3">
-              Sayfayı bulamadık
+            Page not found
             </h1>
             <p className="text-gray-600 mb-8">
-              Aradığınız sayfa taşınmış olabilir, adı değişmiş olabilir ya da hiç
-              var olmamış olabilir.
+              The page you are looking for may have been moved, renamed, or may not exist.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link to="/" className="inline-flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-green-600 to-blue-600 text-white shadow hover:opacity-95">
-                <Home className="w-4 h-4 mr-2" /> Ana sayfaya dön
+                <Home className="w-4 h-4 mr-2" /> Go to home page
               </Link>
             </div>
           </div>
