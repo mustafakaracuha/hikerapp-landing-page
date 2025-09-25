@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <span className="text-2xl font-bold">Hiker</span>
+              <span className="text-2xl font-bold">Hiker App</span>
             </div>
             <p className="text-green-100 leading-relaxed">
               Your ultimate hiking companion for discovering trails, connecting with nature, and building lasting memories.
