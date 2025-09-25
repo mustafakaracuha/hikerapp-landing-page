@@ -106,17 +106,50 @@ const FeaturesSection = () => {
             </div>
 
             <div className="relative">
-              {/* Mock phone interface */}
-              <div className="relative w-80 mx-auto">
+              {/* Phone gallery */}
+              <div className="hidden md:block absolute -left-10 top-10 rotate-[-8deg]">
+                <div className="bg-black rounded-[2.5rem] p-2 shadow-xl w-56">
+                  <div className="rounded-[2rem] overflow-hidden h-[420px] bg-white">
+                    <div className="h-6 bg-gray-100 flex items-center justify-between px-3 text-[10px] text-gray-500">
+                      <span>9:41</span>
+                      <div className="flex items-center gap-1">
+                        <span className="w-3 h-3 rounded-full bg-green-500" />
+                        <span className="w-3 h-3 rounded-full bg-blue-500" />
+                        <span className="w-3 h-3 rounded-full bg-amber-500" />
+                      </div>
+                    </div>
+                    <div className="p-3 space-y-3">
+                      <div className="h-28 rounded-xl bg-gradient-to-br from-green-100 to-blue-100 border border-green-100" />
+                      <div className="grid grid-cols-3 gap-2 text-[10px]">
+                        <div className="px-2 py-1 rounded-md bg-green-50 text-green-700 text-center">GPS</div>
+                        <div className="px-2 py-1 rounded-md bg-blue-50 text-blue-700 text-center">Weather</div>
+                        <div className="px-2 py-1 rounded-md bg-amber-50 text-amber-700 text-center">Compass</div>
+                      </div>
+                      <div className="space-y-2 text-xs">
+                        <div className="flex justify-between bg-gray-50 rounded-md p-2">
+                          <span className="text-gray-500">Distance</span>
+                          <span className="font-semibold">5.6 km</span>
+                        </div>
+                        <div className="flex justify-between bg-gray-50 rounded-md p-2">
+                          <span className="text-gray-500">Elevation</span>
+                          <span className="font-semibold">780 m</span>
+                        </div>
+                      </div>
+                      <button className="w-full mt-1 py-2 rounded-lg bg-green-600 text-white text-xs">Start</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative w-72 sm:w-80 mx-auto z-10">
                 <div className="bg-black rounded-[3rem] p-3 shadow-2xl">
-                  <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-[2.5rem] h-[600px] p-6 relative overflow-hidden">
+                  <div className="bg-gradient-to-br from-green-100 to-blue-100 rounded-[2.5rem] h-[560px] p-6 relative overflow-hidden">
                     <div className="text-center space-y-4 pt-8">
                       <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl mx-auto flex items-center justify-center">
                         <Navigation className="w-10 h-10 text-white" />
                       </div>
                       <h4 className="text-xl font-bold text-foreground">Trail Active</h4>
                       <p className="text-muted-foreground">Mount Eversting Trail</p>
-                      
                       <div className="bg-white rounded-xl p-4 space-y-3">
                         <div className="flex justify-between items-center">
                           <span className="text-sm text-muted-foreground">Distance</span>
@@ -129,6 +162,42 @@ const FeaturesSection = () => {
                           <span className="text-muted-foreground">Elevation: 1,450m</span>
                           <span className="text-green-600 font-medium">On Track</span>
                         </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="hidden md:block absolute -right-10 bottom-10 rotate-[8deg]">
+                <div className="bg-black rounded-[2.5rem] p-2 shadow-xl w-56">
+                  <div className="rounded-[2rem] overflow-hidden h-[420px] bg-white">
+                    <div className="h-6 bg-gray-100 flex items-center justify-between px-3 text-[10px] text-gray-500">
+                      <span>9:41</span>
+                      <div className="flex items-center gap-1">
+                        <span className="w-3 h-3 rounded-full bg-green-500" />
+                        <span className="w-3 h-3 rounded-full bg-blue-500" />
+                        <span className="w-3 h-3 rounded-full bg-amber-500" />
+                      </div>
+                    </div>
+                    <div className="p-3 space-y-3">
+                      <div className="bg-white rounded-xl p-3 border space-y-2">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-500">Sarah</span>
+                          <span className="text-gray-400">2m</span>
+                        </div>
+                        <p className="text-xs text-gray-700">Sunrise at the ridge today was stunning! Trail condition is great.</p>
+                        <div className="h-20 rounded-lg bg-gradient-to-br from-blue-100 to-green-100" />
+                        <div className="flex gap-2 text-[10px]">
+                          <span className="px-2 py-1 rounded bg-gray-50">👍 18</span>
+                          <span className="px-2 py-1 rounded bg-gray-50">💬 3</span>
+                        </div>
+                      </div>
+                      <div className="bg-white rounded-xl p-3 border space-y-2">
+                        <div className="flex items-center justify-between text-xs">
+                          <span className="text-gray-500">Mike</span>
+                          <span className="text-gray-400">10m</span>
+                        </div>
+                        <p className="text-xs text-gray-700">Found a waterfall spur – worth the detour.</p>
                       </div>
                     </div>
                   </div>
