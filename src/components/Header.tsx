@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Menu, Download, Apple, Play, X } from "lucide-react";
 import { useState } from "react";
 
@@ -16,7 +15,7 @@ const Header = () => {
                 <span className="text-white font-bold text-lg">H</span>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
-                Hike
+                Hiker
               </span>
             </div>
             
@@ -31,38 +30,17 @@ const Header = () => {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
-              <Button variant="ghost" className="text-gray-700 hover:text-green-600">
-                Login
-              </Button>
-              
-              {/* App Store Buttons */}
-              <div className="flex items-center space-x-2">
-                <Button variant="download" size="sm" className="justify-start hover-scale">
-                  <Apple className="w-4 h-4 mr-2" />
-                  <div className="text-left">
-                    <div className="text-xs opacity-90 leading-tight">Download on</div>
-                    <div className="text-sm font-semibold leading-tight">App Store</div>
-                  </div>
-                </Button>
-                <Button variant="download" size="sm" className="justify-start hover-scale">
-                  <Play className="w-4 h-4 mr-2" />
-                  <div className="text-left">
-                    <div className="text-xs opacity-90 leading-tight">Get it on</div>
-                    <div className="text-sm font-semibold leading-tight">Google Play</div>
-                  </div>
-                </Button>
-              </div>
+              <button className="px-3 py-2 rounded-md text-gray-700 hover:text-green-600 transition-colors">Login</button>
+              <button className="px-4 py-2 rounded-lg bg-green-600 text-white shadow hover:opacity-95 transition-opacity">Sign Up</button>
             </div>
 
             {/* Mobile Menu Button */}
-            <Button 
-              variant="ghost" 
-              size="icon" 
-              className="lg:hidden text-gray-700 hover:text-green-600"
+            <button 
+              className="lg:hidden p-2 rounded-md text-gray-700 hover:text-green-600"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </Button>
+            </button>
           </div>
         </div>
       </header>
@@ -81,26 +59,8 @@ const Header = () => {
             </nav>
             
             <div className="space-y-3 border-t pt-4">
-              <Button variant="ghost" className="w-full justify-start text-gray-700">
-                Login
-              </Button>
-              
-              <div className="space-y-2">
-                <Button variant="download" className="w-full justify-start">
-                  <Apple className="w-5 h-5 mr-3" />
-                  <div className="text-left">
-                    <div className="text-xs opacity-90">Download on the</div>
-                    <div className="text-sm font-semibold">App Store</div>
-                  </div>
-                </Button>
-                <Button variant="download" className="w-full justify-start">
-                  <Play className="w-5 h-5 mr-3" />
-                  <div className="text-left">
-                    <div className="text-xs opacity-90">Get it on</div>
-                    <div className="text-sm font-semibold">Google Play</div>
-                  </div>
-                </Button>
-              </div>
+              <button className="w-full text-left px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</button>
+              <button className="w-full text-left px-3 py-2 rounded-md text-white bg-green-600 hover:opacity-95">Sign Up</button>
             </div>
           </div>
         </div>

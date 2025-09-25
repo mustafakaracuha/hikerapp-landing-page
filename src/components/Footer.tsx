@@ -1,4 +1,3 @@
-import { Button } from "@/components/ui/button";
 import { Apple, Play, Facebook, Twitter, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
@@ -13,20 +12,20 @@ const Footer = () => {
               <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">H</span>
               </div>
-              <span className="text-2xl font-bold">Hike</span>
+              <span className="text-2xl font-bold">Hiker</span>
             </div>
             <p className="text-green-100 leading-relaxed">
               Your ultimate hiking companion for discovering trails, connecting with nature, and building lasting memories.
             </p>
             <div className="flex gap-4">
-              <Button variant="download" size="sm">
+              <a href="#" className="inline-flex items-center px-3 py-2 rounded-lg bg-white text-gray-600 shadow">
                 <Apple className="w-4 h-4 mr-2" />
                 App Store
-              </Button>
-              <Button variant="download" size="sm">
+              </a>
+              <a href="#" className="inline-flex items-center px-3 py-2 rounded-lg bg-white text-gray-600 shadow">
                 <Play className="w-4 h-4 mr-2" />
                 Google Play
-              </Button>
+              </a>
             </div>
           </div>
 
@@ -61,18 +60,10 @@ const Footer = () => {
               Follow us for the latest trail updates and hiking tips.
             </p>
             <div className="flex gap-3">
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                <Facebook className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                <Twitter className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                <Instagram className="w-5 h-5" />
-              </Button>
-              <Button variant="ghost" size="icon" className="text-white hover:bg-white/10">
-                <Youtube className="w-5 h-5" />
-              </Button>
+              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Facebook className="w-5 h-5" /></a>
+              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Instagram className="w-5 h-5" /></a>
+              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Youtube className="w-5 h-5" /></a>
             </div>
           </div>
         </div>
@@ -83,7 +74,7 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-green-200 text-sm">
-              © 2024 Hike App. All rights reserved.
+              © 2025 Hiker App. All rights reserved.
             </p>
             <p className="text-green-200 text-sm">
               Made with ❤️ for outdoor enthusiasts

@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
+ 
 import { Download, Apple, Play, Star, Users, MapPin } from "lucide-react";
 import heroImage from "@/assets/hero-hiking.jpg";
 
@@ -27,20 +26,20 @@ const HeroSection = () => {
 
             {/* App Store Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="download" size="lg" className="justify-start">
+              <a href="#" className="inline-flex items-center px-5 py-2  rounded-xl bg-blue-600  text-white shadow-lg">
                 <Apple className="w-6 h-6 mr-3" />
                 <div className="text-left">
                   <div className="text-xs opacity-90">Download on the</div>
-                  <div className="text-sm font-semibold">App Store</div>
+                  <div className="text-lg font-semibold">App Store</div>
                 </div>
-              </Button>
-              <Button variant="download" size="lg" className="justify-start">
+              </a>
+              <a href="#" className="inline-flex items-center px-5 py-2 rounded-xl bg-blue-600 text-white shadow-lg">
                 <Play className="w-6 h-6 mr-3" />
                 <div className="text-left">
                   <div className="text-xs opacity-90">Get it on</div>
-                  <div className="text-sm font-semibold">Google Play</div>
+                  <div className="text-lg font-semibold">Google Play</div>
                 </div>
-              </Button>
+              </a>
             </div>
 
             {/* Stats */}
@@ -72,7 +71,7 @@ const HeroSection = () => {
             </div>
             
             {/* Floating Cards */}
-            <Card className="absolute top-8 left-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg">
+            <div className="absolute top-8 left-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl">
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <div className="text-sm">
@@ -80,15 +79,15 @@ const HeroSection = () => {
                   <div className="text-muted-foreground">2.3 km completed</div>
                 </div>
               </div>
-            </Card>
+            </div>
 
-            <Card className="absolute bottom-8 right-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg">
+            <div className="absolute bottom-8 right-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl">
               <div className="text-sm">
                 <div className="font-semibold text-foreground">Weather</div>
                 <div className="text-muted-foreground">Sunny, 22°C</div>
                 <div className="text-green-600 font-medium">Perfect for hiking!</div>
               </div>
-            </Card>
+            </div>
           </div>
         </div>
       </div>

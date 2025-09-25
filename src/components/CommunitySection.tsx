@@ -1,7 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+ 
 import { 
   Heart, 
   MessageCircle, 
@@ -12,17 +9,20 @@ import {
   MapPin,
   Calendar
 } from "lucide-react";
+import mountainTrail from "@/assets/mountain-trail.jpg";
+import forestTrail from "@/assets/forest-trail.jpg";
+import lakeTrail from "@/assets/lake-trail.jpg";
 
 const communityPosts = [
   {
     id: 1,
     user: {
       name: "Sarah Chen",
-      avatar: "/api/placeholder/40/40",
+      avatar: forestTrail,
       level: "Expert Hiker"
     },
     location: "Yosemite National Park",
-    image: "/api/placeholder/300/200",
+    image: mountainTrail,
     caption: "Amazing sunrise from Half Dome! The early morning hike was totally worth it. Can't wait to share the full route guide with everyone.",
     likes: 156,
     comments: 23,
@@ -32,11 +32,11 @@ const communityPosts = [
     id: 2,
     user: {
       name: "Mike Rodriguez",
-      avatar: "/api/placeholder/40/40",
+      avatar: lakeTrail,
       level: "Trail Guide"
     },
     location: "Rocky Mountain National Park",
-    image: "/api/placeholder/300/200",
+    image: forestTrail,
     caption: "Perfect weather for the Bear Lake trail today! Found some amazing wildlife photography spots along the way.",
     likes: 89,
     comments: 12,
@@ -87,26 +87,30 @@ const CommunitySection = () => {
           <div className="lg:col-span-2 space-y-6">
             <div className="flex items-center justify-between">
               <h3 className="text-2xl font-bold text-foreground">Recent Adventures</h3>
-              <Button variant="outline">View All Posts</Button>
+              <a href="#" className="px-4 py-2 rounded-lg border border-green-200 text-green-700 hover:bg-green-50">View All Posts</a>
             </div>
 
             {communityPosts.map((post) => (
-              <Card key={post.id} className="overflow-hidden">
-                <CardContent className="p-0">
+              <div key={post.id} className="overflow-hidden group rounded-xl border border-green-100 bg-white">
+                <div className="p-0">
                   {/* Post Header */}
                   <div className="p-6 pb-4">
                     <div className="flex items-center gap-4">
-                      <Avatar>
-                        <AvatarImage src={post.user.avatar} />
-                        <AvatarFallback>{post.user.name.split(' ').map(n => n[0]).join('')}</AvatarFallback>
-                      </Avatar>
+                      <div className="relative">
+                        <div className="absolute -inset-1 rounded-full bg-gradient-to-br from-green-500/30 to-blue-600/30 blur-md opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <img src={post.user.avatar} alt={post.user.name} className="w-10 h-10 rounded-full ring-2 ring-white shadow-md object-cover" />
+                        <span className="absolute -bottom-0.5 -right-0.5 inline-flex h-3 w-3">
+                          <span className="absolute inline-flex h-full w-full rounded-full bg-green-500 opacity-75 animate-ping" />
+                          <span className="relative inline-flex rounded-full h-3 w-3 bg-green-600" />
+                        </span>
+                      </div>
                       <div className="flex-1">
                         <div className="flex items-center gap-2">
                           <h4 className="font-semibold text-foreground">{post.user.name}</h4>
-                          <Badge variant="secondary" className="text-xs">
+                          <span className="inline-flex items-center px-2 py-1 rounded-md text-xs bg-gray-100 text-gray-700">
                             <Award className="w-3 h-3 mr-1" />
                             {post.user.level}
-                          </Badge>
+                          </span>
                         </div>
                         <div className="flex items-center gap-1 text-muted-foreground text-sm">
                           <MapPin className="w-4 h-4" />
@@ -119,10 +123,13 @@ const CommunitySection = () => {
                   </div>
 
                   {/* Post Image */}
-                  <div className="relative">
-                    <div className="w-full h-64 bg-gradient-to-br from-green-100 to-blue-100 flex items-center justify-center">
-                      <Camera className="w-12 h-12 text-muted-foreground" />
-                    </div>
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={post.image}
+                      alt={post.location}
+                      className="w-full h-80 object-cover transform transition-transform duration-500 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                   </div>
 
                   {/* Post Content */}
@@ -146,16 +153,16 @@ const CommunitySection = () => {
                       </div>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
+                </div>
+              </div>
             ))}
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
             {/* Community Stats */}
-            <Card>
-              <CardContent className="p-6 space-y-4">
+            <div className="rounded-xl border border-green-100 bg-white">
+              <div className="p-6 space-y-4">
                 <h3 className="text-xl font-bold text-foreground">Community Stats</h3>
                 <div className="space-y-3">
                   <div className="flex items-center justify-between">
@@ -171,12 +178,12 @@ const CommunitySection = () => {
                     <span className="font-semibold text-amber-600">23,891</span>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
             {/* Upcoming Events */}
-            <Card>
-              <CardContent className="p-6 space-y-4">
+            <div className="rounded-xl border border-green-100 bg-white">
+              <div className="p-6 space-y-4">
                 <h3 className="text-xl font-bold text-foreground">Upcoming Group Hikes</h3>
                 <div className="space-y-4">
                   {upcomingEvents.map((event) => (
@@ -195,18 +202,16 @@ const CommunitySection = () => {
                           <Users className="w-3 h-3 text-green-600" />
                           <span>{event.participants}/{event.maxParticipants} joined</span>
                         </div>
-                        <Badge className="text-xs" variant={event.difficulty === 'Hard' ? 'destructive' : event.difficulty === 'Easy' ? 'secondary' : 'default'}>
+                        <span className={`px-2 py-1 rounded-md text-xs ${event.difficulty === 'Hard' ? 'bg-red-100 text-red-700' : event.difficulty === 'Easy' ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
                           {event.difficulty}
-                        </Badge>
+                        </span>
                       </div>
                     </div>
                   ))}
                 </div>
-                <Button variant="nature" className="w-full" size="sm">
-                  View All Events
-                </Button>
-              </CardContent>
-            </Card>
+                <button className="w-full px-4 py-2 rounded-md border border-green-200 text-green-700 hover:bg-green-50 text-sm">View All Events</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

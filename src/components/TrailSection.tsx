@@ -1,6 +1,4 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+ 
 import { Clock, MapPin, TrendingUp, Star } from "lucide-react";
 import mountainTrail from "@/assets/mountain-trail.jpg";
 import forestTrail from "@/assets/forest-trail.jpg";
@@ -67,7 +65,7 @@ const TrailSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {trails.map((trail) => (
-            <Card key={trail.id} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-2 overflow-hidden">
+            <div key={trail.id} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-2 overflow-hidden rounded-xl border border-green-100 bg-white">
               <div className="relative">
                 <img 
                   src={trail.image} 
@@ -75,9 +73,7 @@ const TrailSection = () => {
                   className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute top-4 left-4">
-                  <Badge className={trail.difficultyColor}>
-                    {trail.difficulty}
-                  </Badge>
+                  <span className={`px-2 py-1 rounded-md text-xs font-medium ${trail.difficultyColor}`}>{trail.difficulty}</span>
                 </div>
                 <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1">
                   <div className="flex items-center gap-1">
@@ -87,7 +83,7 @@ const TrailSection = () => {
                 </div>
               </div>
               
-              <CardContent className="p-6 space-y-4">
+              <div className="p-6 space-y-4">
                 <div>
                   <h3 className="text-xl font-bold text-foreground mb-1">{trail.name}</h3>
                   <div className="flex items-center gap-1 text-muted-foreground">
@@ -112,19 +108,15 @@ const TrailSection = () => {
                     <div className="text-lg font-bold text-foreground">{trail.distance}</div>
                     <div className="text-sm text-muted-foreground">{trail.reviews} reviews</div>
                   </div>
-                  <Button variant="nature" size="sm">
-                    Start Trail
-                  </Button>
+                  <button className="px-3 py-2 text-sm rounded-md border border-green-200 text-green-700 hover:bg-green-50">Start Trail</button>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg">
-            View All Trails
-          </Button>
+          <a href="#" className="inline-flex items-center px-5 py-3 rounded-xl border border-green-200 text-green-700 hover:bg-green-50">View All Trails</a>
         </div>
       </div>
     </section>

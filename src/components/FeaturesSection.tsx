@@ -1,4 +1,4 @@
-import { Card, CardContent } from "@/components/ui/card";
+ 
 import { 
   Smartphone, 
   Navigation, 
@@ -62,15 +62,15 @@ const FeaturesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-1 border-0 bg-white/70 backdrop-blur-sm">
-              <CardContent className="p-8 text-center space-y-4">
+            <div key={index} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-1 bg-white/70 backdrop-blur-sm rounded-2xl border border-green-100">
+              <div className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           ))}
         </div>
 
