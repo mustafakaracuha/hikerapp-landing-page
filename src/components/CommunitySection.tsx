@@ -1,4 +1,4 @@
- 
+import { motion } from "framer-motion"; 
 import { 
   Heart, 
   MessageCircle, 
@@ -69,7 +69,7 @@ const CommunitySection = () => {
   return (
     <section id="community" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-16">
+        <motion.div className="text-center space-y-4 mb-16" initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45}}>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
             Share Your Adventure with the
             <br />
@@ -80,7 +80,7 @@ const CommunitySection = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Connect with fellow hikers, share your experiences, and discover new trails through our vibrant community.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Community Feed */}
@@ -90,8 +90,8 @@ const CommunitySection = () => {
               <a href="#" className="px-4 py-2 rounded-lg border border-green-200 text-green-700 hover:bg-green-50">View All Posts</a>
             </div>
 
-            {communityPosts.map((post) => (
-              <div key={post.id} className="overflow-hidden group rounded-xl border border-green-100 bg-white">
+            {communityPosts.map((post, idx) => (
+              <motion.div key={post.id} className="overflow-hidden group rounded-xl border border-green-100 bg-white" initial={{opacity:0, y:16}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4, delay:idx*0.05}}>
                 <div className="p-0">
                   {/* Post Header */}
                   <div className="p-6 pb-4">
@@ -154,7 +154,7 @@ const CommunitySection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
 

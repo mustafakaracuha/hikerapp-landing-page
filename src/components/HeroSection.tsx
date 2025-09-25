@@ -1,5 +1,6 @@
  
 import { Download, Apple, Play, Star, Users, MapPin } from "lucide-react";
+import { motion } from "framer-motion";
 import heroImage from "@/assets/hero-hiking.jpg";
 
 const HeroSection = () => {
@@ -11,7 +12,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left side - Content */}
-          <div className="space-y-8">
+          <motion.div className="space-y-8" initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true, amount:0.4}} transition={{duration:0.5, ease:"easeOut"}}>
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 Hike Smarter,<br />
@@ -57,10 +58,10 @@ const HeroSection = () => {
                 <span className="text-sm text-muted-foreground">4.8 Rating</span>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right side - Hero Image */}
-          <div className="relative">
+          <motion.div className="relative" initial={{opacity:0, scale:0.98}} whileInView={{opacity:1, scale:1}} viewport={{once:true, amount:0.3}} transition={{duration:0.5, ease:"easeOut", delay:0.1}}>
             <div className="relative rounded-3xl overflow-hidden shadow-2xl">
               <img 
                 src={heroImage} 
@@ -71,7 +72,7 @@ const HeroSection = () => {
             </div>
             
             {/* Floating Cards */}
-            <div className="absolute top-8 left-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl">
+            <motion.div className="absolute top-8 left-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl" initial={{opacity:0, y:-8}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4, delay:0.2}}>
               <div className="flex items-center gap-3">
                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" />
                 <div className="text-sm">
@@ -79,16 +80,16 @@ const HeroSection = () => {
                   <div className="text-muted-foreground">2.3 km completed</div>
                 </div>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="absolute bottom-8 right-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl">
+            <motion.div className="absolute bottom-8 right-8 p-4 bg-white/90 backdrop-blur-sm shadow-lg rounded-xl" initial={{opacity:0, y:8}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4, delay:0.25}}>
               <div className="text-sm">
                 <div className="font-semibold text-foreground">Weather</div>
                 <div className="text-muted-foreground">Sunny, 22°C</div>
                 <div className="text-green-600 font-medium">Perfect for hiking!</div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

@@ -36,9 +36,6 @@ const NotFound = () => {
               <Link to="/" className="inline-flex items-center px-5 py-3 rounded-xl bg-gradient-to-br from-green-600 to-blue-600 text-white shadow hover:opacity-95">
                 <Home className="w-4 h-4 mr-2" /> Ana sayfaya dön
               </Link>
-              <Link to={-1 as unknown as string} className="inline-flex items-center px-5 py-3 rounded-xl border border-green-200 text-green-700 hover:bg-green-50">
-                <ArrowLeft className="w-4 h-4 mr-2" /> Geri git
-              </Link>
             </div>
           </div>
         </div>

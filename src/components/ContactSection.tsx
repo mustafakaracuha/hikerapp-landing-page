@@ -1,8 +1,10 @@
+import { motion } from "framer-motion";
+
 const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-12">
+        <motion.div className="text-center space-y-4 mb-12" initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45}}>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
             Get in
             <br />
@@ -11,9 +13,9 @@ const ContactSection = () => {
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Questions, feedback, or partnership ideas? We’d love to hear from you.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-8 border border-green-100">
+        <motion.div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-2xl p-8 border border-green-100" initial={{opacity:0, y:16}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45}}>
           <form className="grid sm:grid-cols-2 gap-6">
             <div className="sm:col-span-1">
               <label className="block text-sm font-medium text-foreground mb-2">Name</label>
@@ -33,7 +35,7 @@ const ContactSection = () => {
               </button>
             </div>
           </form>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

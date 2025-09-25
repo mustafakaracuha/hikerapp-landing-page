@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+
 const AboutSection = () => {
   return (
     <section id="about" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-6">
+          <motion.div className="space-y-6" initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45}}>
             <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
               About
               <br />
@@ -22,14 +24,14 @@ const AboutSection = () => {
                 <div className="text-sm text-muted-foreground">Curated trails</div>
               </div>
             </div>
-          </div>
-          <div className="rounded-3xl overflow-hidden shadow-2xl border border-green-100 bg-gradient-to-br from-green-50 to-blue-50 aspect-[16/10]">
+          </motion.div>
+          <motion.div className="rounded-3xl overflow-hidden shadow-2xl border border-green-100 bg-gradient-to-br from-green-50 to-blue-50 aspect-[16/10]" initial={{opacity:0, scale:0.98}} whileInView={{opacity:1, scale:1}} viewport={{once:true}} transition={{duration:0.5, ease:"easeOut"}}>
             <img 
-              src="https://img.freepik.com/free-vector/adventure-background_23-2149048249.jpg?semt=ais_hybrid&w=740&q=80" 
+              src="https://cdni.iconscout.com/illustration/premium/thumb/mountain-landscape-illustration-svg-download-png-4529790.png" 
               alt="Hiking themed illustration"
               className="w-full h-full object-cover"
             />
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

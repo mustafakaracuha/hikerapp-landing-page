@@ -1,4 +1,4 @@
- 
+import { motion } from "framer-motion"; 
 import { 
   Smartphone, 
   Navigation, 
@@ -47,7 +47,7 @@ const FeaturesSection = () => {
   return (
     <section id="features" className="py-20 bg-gradient-to-br from-green-50 to-blue-50">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-16">
+        <motion.div className="text-center space-y-4 mb-16" initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45}}>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
             Everything You Need for the
             <br />
@@ -58,11 +58,11 @@ const FeaturesSection = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Our comprehensive hiking app provides all the tools and features you need for safe, enjoyable adventures.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <div key={index} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-1 bg-white/70 backdrop-blur-sm rounded-2xl border border-green-100">
+            <motion.div key={index} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-1 bg-white/70 backdrop-blur-sm rounded-2xl border border-green-100" initial={{opacity:0, y:16}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4, delay:index*0.05}}>
               <div className="p-8 text-center space-y-4">
                 <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300">
                   <feature.icon className="w-8 h-8 text-white" />
@@ -70,7 +70,7 @@ const FeaturesSection = () => {
                 <h3 className="text-xl font-bold text-foreground">{feature.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{feature.description}</p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 

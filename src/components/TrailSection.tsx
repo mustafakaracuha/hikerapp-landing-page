@@ -1,4 +1,4 @@
- 
+import { motion } from "framer-motion"; 
 import { Clock, MapPin, TrendingUp, Star } from "lucide-react";
 import mountainTrail from "@/assets/mountain-trail.jpg";
 import forestTrail from "@/assets/forest-trail.jpg";
@@ -50,7 +50,7 @@ const TrailSection = () => {
   return (
     <section id="trails" className="py-20 bg-background">
       <div className="container mx-auto px-4">
-        <div className="text-center space-y-4 mb-16">
+        <motion.div className="text-center space-y-4 mb-16" initial={{opacity:0, y:12}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.45}}>
           <h2 className="text-4xl lg:text-5xl font-bold text-foreground">
             Choose a Trail That
             <br />
@@ -61,11 +61,11 @@ const TrailSection = () => {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             From beginner-friendly walks to challenging mountain climbs, find the perfect trail for your next adventure.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {trails.map((trail) => (
-            <div key={trail.id} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-2 overflow-hidden rounded-xl border border-green-100 bg-white">
+            <motion.div key={trail.id} className="group hover:shadow-nature transition-all duration-300 hover:-translate-y-2 overflow-hidden rounded-xl border border-green-100 bg-white" initial={{opacity:0, y:16}} whileInView={{opacity:1, y:0}} viewport={{once:true}} transition={{duration:0.4}}>
               <div className="relative">
                 <img 
                   src={trail.image} 
@@ -111,7 +111,7 @@ const TrailSection = () => {
                   <button className="px-3 py-2 text-sm rounded-md border border-green-200 text-green-700 hover:bg-green-50">Start Trail</button>
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
