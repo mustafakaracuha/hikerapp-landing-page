@@ -1,73 +1,89 @@
-# Welcome to your Lovable project
+# Hiker – Hiking Landing Page
 
-## Project info
+Modern, high‑performance React + Vite landing page for a hiking app. Built with Tailwind CSS and Framer Motion, featuring animated sections, modal authentication, and responsive UI.
 
-**URL**: https://lovable.dev/projects/7df2c0fb-4ac1-4581-b92b-bbc5578712ed
+## Tech Stack
+- React 18, Vite 5
+- TypeScript
+- Tailwind CSS (+ tailwind-merge, typography)
+- Framer Motion (page/section animations)
+- React Router v6 (routing & 404)
+- Lucide Icons
+- TanStack Query (ready for data fetching)
 
-## How can I edit this code?
+## Features
+- Smooth hero with background image and store CTAs
+- Trails, Features, Community, About, Contact sections
+- Framer Motion animations (route transitions and in‑view effects)
+- Login / Sign Up modals with social buttons (Google, Facebook, GitHub)
+- 404 page aligned with site design
+- Mobile‑first responsive layout and smooth anchor scrolling
 
-There are several ways of editing your application.
+## Getting Started
+```bash
+# 1) Install deps
+npm install
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/7df2c0fb-4ac1-4581-b92b-bbc5578712ed) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 2) Start dev server
 npm run dev
+
+# 3) Build for production
+npm run build
+# Preview production build
+npm run preview
 ```
 
-**Edit a file directly in GitHub**
+## Project Structure
+```
+src/
+  components/
+    Header.tsx              # Navbar + login/signup modals
+    HeroSection.tsx         # Hero with bg image & CTAs
+    TrailSection.tsx        # Trails grid
+    FeaturesSection.tsx     # App features
+    CommunitySection.tsx    # Recent adventures & sidebar
+    AboutSection.tsx        # About Hiker
+    ContactSection.tsx      # Contact form
+    auth/
+      LoginModal.tsx
+      SignUpModal.tsx
+  pages/
+    Index.tsx               # Home composition
+    NotFound.tsx            # 404
+  main.tsx, App.tsx         # App boot & animated routes
+  index.css                 # Theme tokens and utilities
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Key Decisions
+- Removed shadcn/ui components; replaced with semantic HTML + Tailwind utilities.
+- Centralized animations with Framer Motion (route transitions + section reveals).
+- Modal auth extracted to reusable components (`components/auth/*`).
+- Smooth anchor scroll enabled via `html { scroll-behavior: smooth; }`.
 
-**Use GitHub Codespaces**
+## Customization
+- Colors and shadows live in `src/index.css` under `@layer base :root`.
+- Swap hero background by replacing `src/assets/hero-hiking.jpg`.
+- Tune animation timings in components (search for `motion` usage).
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Environment & Deployment
+- No server required; static export works on any static host (Vercel/Netlify).
+- Ensure `base` in `vite.config.ts` matches your deploy path if deploying to a subfolder.
 
-## What technologies are used for this project?
+## Accessibility
+- Keyboard‑focusable buttons/links, sufficient contrast.
+- Modals close on overlay click; can be extended with ESC/focus‑trap.
 
-This project is built with:
+## Scripts
+- `npm run dev` – start dev server
+- `npm run build` – build production assets
+- `npm run preview` – preview production
+- `npm run lint` – run ESLint
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Roadmap Ideas
+- Hook real OAuth providers to social buttons
+- Persist auth state and gated content
+- Add dark mode toggle
+- Add content CMS for trails/posts
 
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/7df2c0fb-4ac1-4581-b92b-bbc5578712ed) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+## License
+MIT
