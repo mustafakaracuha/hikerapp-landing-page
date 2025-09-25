@@ -1,6 +1,9 @@
-# Hiker – Hiking Landing Page
+# Hiker App – Hiking Landing Page
 
 Modern, high‑performance React + Vite landing page for a hiking app. Built with Tailwind CSS and Framer Motion, featuring animated sections, modal authentication, and responsive UI.
+
+## Preview
+![Hiker App Landing Page Preview](./src/assets/hero-hiking.jpg)
 
 ## Tech Stack
 - React 18, Vite 5
