@@ -1,8 +1,10 @@
 import { Menu, Download, Apple, Play, X } from "lucide-react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -10,7 +12,7 @@ const Header = () => {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center space-x-3">
+            <div onClick={() => navigate("/")}  className="flex cursor-pointer items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-green-500 via-green-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">H</span>
               </div>
@@ -30,8 +32,8 @@ const Header = () => {
 
             {/* Desktop CTA Buttons */}
             <div className="hidden lg:flex items-center space-x-3">
-              <button className="px-3 py-2 rounded-md text-gray-700 hover:text-green-600 transition-colors">Login</button>
-              <button className="px-4 py-2 rounded-lg bg-green-600 text-white shadow hover:opacity-95 transition-opacity">Sign Up</button>
+              <a href="/login" className="px-3 py-2 rounded-md text-gray-700 hover:text-green-600 transition-colors">Login</a>
+              <a href="/signup" className="px-4 py-2 rounded-lg bg-green-600 text-white shadow hover:opacity-95 transition-opacity">Sign Up</a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -59,8 +61,8 @@ const Header = () => {
             </nav>
             
             <div className="space-y-3 border-t pt-4">
-              <button className="w-full text-left px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</button>
-              <button className="w-full text-left px-3 py-2 rounded-md text-white bg-green-600 hover:opacity-95">Sign Up</button>
+              <a href="/login" className="block w-full text-left px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100">Login</a>
+              <a href="/signup" className="block w-full text-left px-3 py-2 rounded-md text-white bg-green-600 hover:opacity-95">Sign Up</a>
             </div>
           </div>
         </div>

@@ -9,9 +9,6 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-green-400 to-green-500 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">H</span>
-              </div>
               <span className="text-2xl font-bold">Hiker</span>
             </div>
             <p className="text-green-100 leading-relaxed">
@@ -59,11 +56,11 @@ const Footer = () => {
             <p className="text-green-100 text-sm">
               Follow us for the latest trail updates and hiking tips.
             </p>
-            <div className="flex gap-3">
-              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Facebook className="w-5 h-5" /></a>
-              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Twitter className="w-5 h-5" /></a>
-              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Instagram className="w-5 h-5" /></a>
-              <a href="#" className="p-2 rounded-md text-white hover:bg-white/10"><Youtube className="w-5 h-5" /></a>
+            <div className="flex space-x-4">
+              <a href="#" className="rounded-md text-white hover:bg-white/10"><Facebook className="w-5 h-5" /></a>
+              <a href="#" className="rounded-md text-white hover:bg-white/10"><Twitter className="w-5 h-5" /></a>
+              <a href="#" className="rounded-md text-white hover:bg-white/10"><Instagram className="w-5 h-5" /></a>
+              <a href="#" className="rounded-md text-white hover:bg-white/10"><Youtube className="w-5 h-5" /></a>
             </div>
           </div>
         </div>
