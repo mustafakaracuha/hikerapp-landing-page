@@ -15,14 +15,14 @@ const Header = () => {
         <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div onClick={() => navigate("/")}  className="flex cursor-pointer items-center space-x-3">
+            <a href="#" className="flex cursor-pointer items-center space-x-3">
               <div className="w-10 h-10 bg-gradient-to-br from-green-500 via-green-600 to-blue-600 rounded-xl flex items-center justify-center shadow-lg">
                 <span className="text-white font-bold text-lg">H</span>
               </div>
               <span className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
                 Hiker App
               </span>
-            </div>
+            </a>
             
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-8">
